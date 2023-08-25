@@ -18,6 +18,7 @@ public class NotesEntity {
     private UUID noteId;
     private UUID userId;
     private String title;
+    private float wordcount;
     private String content;
     private LocalDateTime timestamp;
 }
