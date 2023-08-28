@@ -7,20 +7,18 @@ import jakarta.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.UUID;
-
 @Entity
 @Getter
 @Setter
-public class TeamsEntity {
+public class Subspace {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID Id;
-    private UUID notesId;
-    private UUID userId;
-    private UUID subspacesId;
-    private UUID spacesId;
+    private int Id;
+    private int notesId;
+    private int userId;
+    private int spacesId;
+    private int teamsId;
     private String name;
     private String description;
-    private float usercount;
+    private float notescount;
 }

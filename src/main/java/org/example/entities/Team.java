@@ -12,15 +12,15 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
-public class SubspacesEntity {
+public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID Id;
     private UUID notesId;
     private UUID userId;
+    private UUID subspacesId;
     private UUID spacesId;
-    private UUID teamsId;
     private String name;
     private String description;
-    private float notescount;
+    private float usercount;
 }
