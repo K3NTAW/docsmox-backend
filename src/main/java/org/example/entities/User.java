@@ -1,8 +1,9 @@
 package org.example.entities;
 
-        import jakarta.persistence.Entity;
-        import jakarta.persistence.GeneratedValue;
-        import jakarta.persistence.GenerationType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
         import lombok.Getter;
         import lombok.Setter;
 
@@ -12,7 +13,7 @@ package org.example.entities;
 @Getter
 @Setter
 public class User {
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID Id;
     private String name;
