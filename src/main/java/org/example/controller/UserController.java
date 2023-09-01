@@ -34,13 +34,8 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable("id") int id) {
-        Optional<User> user = userRepository.findById(id);
-        if (user.isPresent()) {
-            return user.get();
-        }
-        logger.info("user not found" + user.toString());
-        return null;
+    public User getUserById(@PathVariable int id) {
+        return userRepository.findById(id).orElse(null);
     }
 }
 
