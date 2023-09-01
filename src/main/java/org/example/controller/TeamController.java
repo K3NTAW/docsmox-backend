@@ -1,7 +1,6 @@
 package org.example.controller;
 
 import org.example.entities.Team;
-import org.example.entities.User;
 import org.example.repository.TeamRepository;
 import org.springframework.web.bind.annotation.*;
 

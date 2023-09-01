@@ -1,7 +1,6 @@
 package org.example.controller;
 
 import org.example.entities.Subspace;
-import org.example.entities.Team;
 import org.example.repository.SubspaceRepository;
 import org.springframework.web.bind.annotation.*;
 
