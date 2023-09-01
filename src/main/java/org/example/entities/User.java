@@ -20,9 +20,8 @@ public class User {
 
     private String name;
     private String firstname;
-    private String phonenummber;
+    private String phonenumber;
     private String email;
-    private int birthday;
     private int friendsId;
     private int teamsId;
 }
