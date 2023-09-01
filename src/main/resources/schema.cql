@@ -1,7 +1,7 @@
-CREATE KEYSPACE IF NOT EXISTS myspace
+CREATE KEYSPACE IF NOT EXISTS docsmoxkeyspace
     WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 
-USE myspace;
+USE docsmoxkeyspace;
 
 CREATE TABLE IF NOT EXISTS notes (
                                         id INT PRIMARY KEY,
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS teams(
                                         usercount float
 );
 CREATE TABLE IF NOT EXISTS user(
-                                    id INT PRIMARY KEY,
+                                    id UUID PRIMARY KEY,
                                     name TEXT,
                                     firstname TEXT,
                                     phonenumber TEXT,

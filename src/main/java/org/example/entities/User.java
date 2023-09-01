@@ -5,6 +5,8 @@ import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,12 +16,13 @@ import org.springframework.data.cassandra.core.mapping.Table;
 public class User {
 
     @PrimaryKey // Mark the primary key field
-    private int id;
+    @Column("id")
+    private UUID id;
 
     @Column("name")
     private String name;
 
-    @Column("lastname")
+    @Column("firstname")
     private String firstname;
 
     @Column("phonenumber")
@@ -28,10 +31,10 @@ public class User {
     @Column("name")
     private String email;
 
-    @Column("friendsId")
+    @Column("friendsid")
     private int friendsId;
 
-    @Column("teamsId")
+    @Column("teamsid")
     private int teamsId;
 
 }
