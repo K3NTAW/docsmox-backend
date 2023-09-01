@@ -15,22 +15,16 @@ public class User {
 
     @PrimaryKey // Mark the primary key field
     private int id;
-
     @Column("name")
     private String name;
-
     @Column("lastname")
     private String firstname;
-
     @Column("phonenumber")
     private String phonenumber;
-
     @Column("name")
     private String email;
-
     @Column("friendsId")
     private int friendsId;
-
     @Column("teamsId")
     private int teamsId;
 
