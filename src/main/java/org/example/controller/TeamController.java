@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/teams")
+@RequestMapping("api/teams")
 public class TeamController {
     @Autowired
     private TeamRepository teamRepository;
@@ -18,6 +18,6 @@ public class TeamController {
 
     @GetMapping("/{id}")
     public Team getTeamById(@PathVariable String id) {
-        return teamRepository.findById(id).orElse(null);
+        return teamRepository.findById(Integer.valueOf(id)).orElse(null);
     }
 }

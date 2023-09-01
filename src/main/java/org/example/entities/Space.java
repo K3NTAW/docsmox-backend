@@ -2,18 +2,16 @@ package org.example.entities;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
 @Getter
 @Setter
+@Table("spaces") // Specify the table name
 public class Space {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    @PrimaryKey // Mark the primary key field
     private int Id;
     private int notesId;
     private int userId;

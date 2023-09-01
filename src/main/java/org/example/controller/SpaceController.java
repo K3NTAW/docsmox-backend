@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/spaces")
+@RequestMapping("api/spaces")
 public class SpaceController {
     @Autowired
     private SpaceRepository spaceRepository;
@@ -18,6 +18,6 @@ public class SpaceController {
 
     @GetMapping("/{id}")
     public Space getSpaceById(@PathVariable String id) {
-        return spaceRepository.findById(id).orElse(null);
+        return spaceRepository.findById(Integer.valueOf(id)).orElse(null);
     }
 }

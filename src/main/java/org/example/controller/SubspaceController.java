@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/subspaces")
+@RequestMapping("api/subspaces")
 public class SubspaceController {
     @Autowired
     private SubspaceRepository subspaceRepository;
@@ -18,6 +18,6 @@ public class SubspaceController {
 
     @GetMapping("/{id}")
     public Subspace getSubspaceById(@PathVariable String id) {
-        return subspaceRepository.findById(id).orElse(null);
+        return subspaceRepository.findById(Integer.valueOf(id)).orElse(null);
     }
 }

@@ -3,16 +3,17 @@ package org.example.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.time.LocalDateTime;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
-@Entity
+
 @Getter
 @Setter
+@Table("notes") // Specify the table name
 public class Note {
-    @Id
+
+    @PrimaryKey // Mark the primary key field
     private int Id;
     private int userId;
     private String title;

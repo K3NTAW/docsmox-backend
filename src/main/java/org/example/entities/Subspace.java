@@ -1,18 +1,16 @@
 package org.example.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
-@Entity
 @Getter
 @Setter
+@Table("subspaces") // Specify the table name
 public class Subspace {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    @PrimaryKey // Mark the primary key field
     private int Id;
     private int notesId;
     private int userId;

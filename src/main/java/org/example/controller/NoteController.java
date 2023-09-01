@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/notes")
+@RequestMapping("/api")
 public class NoteController {
     @Autowired
     private NoteRepository noteRepository;
@@ -18,7 +18,7 @@ public class NoteController {
 
     @GetMapping("/{id}")
     public Note getNoteById(@PathVariable String id) {
-        return noteRepository.findById(id).orElse(null);
+        return noteRepository.findById(Integer.valueOf(id)).orElse(null);
     }
 }
 

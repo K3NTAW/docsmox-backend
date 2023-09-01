@@ -1,25 +1,23 @@
 package org.example.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.UUID;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
-@Entity
+
 @Getter
 @Setter
+@Table("teams") // Specify the table name
 public class Team {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID Id;
-    private UUID notesId;
-    private UUID userId;
-    private UUID subspacesId;
-    private UUID spacesId;
+
+    @PrimaryKey // Mark the primary key field
+    private int Id;
+    private int notesId;
+    private int userId;
+    private int subspacesId;
+    private int spacesId;
     private String name;
     private String description;
     private float usercount;
