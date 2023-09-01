@@ -21,7 +21,6 @@ public class User {
 
     @Column("lastname")
     private String firstname;
-<<<<<<< HEAD
 
     @Column("phonenumber")
     private String phonenumber;
@@ -30,10 +29,6 @@ public class User {
     private String email;
 
     @Column("friendsId")
-=======
-    private String phonenumber;
-    private String email;
->>>>>>> 4cbdf196b9c904781e73d298820c36896ce6ba53
     private int friendsId;
 
     @Column("teamsId")
