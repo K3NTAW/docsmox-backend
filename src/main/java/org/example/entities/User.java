@@ -32,10 +32,10 @@ public class User {
     private String email;
 
     @Column("friendsid")
-    private int friendsId;
+    private UUID friendsId;
 
     @Column("teamsid")
-    private int teamsId;
+    private UUID teamsId;
 
 }
 

@@ -6,6 +6,8 @@ import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
+import java.util.UUID;
+
 
 @Getter
 @Setter
@@ -13,19 +15,27 @@ import org.springframework.data.cassandra.core.mapping.Table;
 public class Space {
 
     @PrimaryKey // Mark the primary key field
-    private int Id;
+    @Column("id")
+    private UUID Id;
+
     @Column("notesId")
-    private int notesId;
+    private UUID notesId;
+
     @Column("userId")
-    private int userId;
+    private UUID userId;
+
     @Column("subspacesId")
-    private int subspacesId;
+    private UUID subspacesId;
+
     @Column("teamsId")
-    private int teamsId;
+    private UUID teamsId;
+
     @Column("name")
     private String name;
+
     @Column("description")
     private String description;
+
     @Column("notescount")
     private float notescount;
 }
