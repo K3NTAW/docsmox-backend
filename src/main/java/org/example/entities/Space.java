@@ -13,6 +13,7 @@ public class Space {
 
     @PrimaryKey // Mark the primary key field
     private int Id;
+
     private int notesId;
     private int userId;
     private int subspacesId;

@@ -4,10 +4,10 @@ import org.example.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class DocsmoxServices {
 
-    @Autowired
+//    @Autowired
     public DocsmoxServices(NoteRepository docsmoxRepository) {
     }
 

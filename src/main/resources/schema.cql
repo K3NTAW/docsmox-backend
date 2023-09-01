@@ -1,7 +1,7 @@
-CREATE KEYSPACE IF NOT EXISTS docsmoxkeyspace
+CREATE KEYSPACE IF NOT EXISTS myspace
     WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 
-USE docsmoxkeyspace;
+USE myspace;
 
 CREATE TABLE IF NOT EXISTS notes (
                                         id INT PRIMARY KEY,

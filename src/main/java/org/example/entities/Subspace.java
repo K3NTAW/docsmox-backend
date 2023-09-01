@@ -12,6 +12,7 @@ public class Subspace {
 
     @PrimaryKey // Mark the primary key field
     private int Id;
+
     private int notesId;
     private int userId;
     private int spacesId;

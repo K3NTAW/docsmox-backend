@@ -15,6 +15,7 @@ public class Note {
 
     @PrimaryKey // Mark the primary key field
     private int Id;
+
     private int userId;
     private String title;
     private float wordcount;
