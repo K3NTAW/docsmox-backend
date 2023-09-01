@@ -2,14 +2,17 @@ package org.example.controller;
 
 import org.example.entities.Team;
 import org.example.repository.TeamRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/teams")
 public class TeamController {
-    @Autowired
-    private TeamRepository teamRepository;
+
+    private final TeamRepository teamRepository;
+
+    public TeamController(TeamRepository teamRepository) {
+        this.teamRepository = teamRepository;
+    }
 
     @PostMapping
     public Team createTeam(@RequestBody Team team) {

@@ -2,14 +2,17 @@ package org.example.controller;
 
 import org.example.entities.Subspace;
 import org.example.repository.SubspaceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/subspaces")
 public class SubspaceController {
-    @Autowired
-    private SubspaceRepository subspaceRepository;
+
+    private final SubspaceRepository subspaceRepository;
+
+    public SubspaceController(SubspaceRepository subspaceRepository) {
+        this.subspaceRepository = subspaceRepository;
+    }
 
     @PostMapping
     public Subspace createSpace(@RequestBody Subspace subspace) {

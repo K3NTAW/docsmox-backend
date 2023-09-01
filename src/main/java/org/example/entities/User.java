@@ -1,9 +1,7 @@
 package org.example.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
@@ -11,19 +9,30 @@ import org.springframework.data.cassandra.core.mapping.Table;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Data
 @Table("user") // Specify the table name
 public class User {
 
     @PrimaryKey // Mark the primary key field
     private int id;
 
+    @Column("name")
     private String name;
+
+    @Column("lastname")
     private String firstname;
-    private String phonenummber;
+
+    @Column("phonenumber")
+    private String phonenumber;
+
+    @Column("name")
     private String email;
-    private int birthday;
+
+    @Column("friendsId")
     private int friendsId;
+
+    @Column("teamsId")
     private int teamsId;
+
 }
 

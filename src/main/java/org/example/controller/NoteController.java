@@ -2,14 +2,17 @@ package org.example.controller;
 
 import org.example.entities.Note;
 import org.example.repository.NoteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
 public class NoteController {
-    @Autowired
-    private NoteRepository noteRepository;
+
+    private final NoteRepository noteRepository;
+
+    public NoteController(NoteRepository noteRepository) {
+        this.noteRepository = noteRepository;
+    }
 
     @PostMapping
     public Note createNote(@RequestBody Note note) {
