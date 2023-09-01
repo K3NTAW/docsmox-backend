@@ -1,7 +1,6 @@
 package org.example.controller;
 
 import org.example.entities.Note;
-import org.example.entities.Team;
 import org.example.repository.NoteRepository;
 import org.springframework.web.bind.annotation.*;
 

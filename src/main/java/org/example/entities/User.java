@@ -28,7 +28,7 @@ public class User {
     @Column("phonenumber")
     private String phonenumber;
 
-    @Column("name")
+    @Column("email")
     private String email;
 
     @Column("friendsid")
