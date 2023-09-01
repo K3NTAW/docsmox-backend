@@ -6,6 +6,7 @@ import org.example.repository.SubspaceRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("api/subspaces")
@@ -19,6 +20,7 @@ public class SubspaceController {
 
     @PostMapping
     public Subspace createSpace(@RequestBody Subspace subspace) {
+        subspace.setId(UUID.randomUUID());
         return subspaceRepository.save(subspace);
     }
     @GetMapping("")
@@ -26,7 +28,7 @@ public class SubspaceController {
         return subspaceRepository.findAll();
     }
     @GetMapping("/{id}")
-    public Subspace getSubspaceById(@PathVariable int id) {
+    public Subspace getSubspaceById(@PathVariable UUID id) {
         return subspaceRepository.findById(id).orElse(null);
     }
 }

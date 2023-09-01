@@ -6,6 +6,7 @@ import org.example.repository.SpaceRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("api/spaces")
@@ -19,6 +20,7 @@ public class SpaceController {
 
     @PostMapping
     public Space createSpace(@RequestBody Space space) {
+        space.setId(UUID.randomUUID());
         return spaceRepository.save(space);
     }
     @GetMapping("")
@@ -26,7 +28,7 @@ public class SpaceController {
         return spaceRepository.findAll();
     }
     @GetMapping("/{id}")
-    public Space getSpaceById(@PathVariable int id) {
+    public Space getSpaceById(@PathVariable UUID id) {
         return spaceRepository.findById(id).orElse(null);
     }
 }

@@ -4,9 +4,9 @@ CREATE KEYSPACE IF NOT EXISTS docsmoxkeyspace
 USE docsmoxkeyspace;
 
 CREATE TABLE IF NOT EXISTS notes (
-                                        id INT PRIMARY KEY,
+                                        id UUID PRIMARY KEY,
                                         name TEXT,
-                                        userId INT,
+                                        userId UUID,
                                         title TEXT,
                                         wordcount float,
                                         content TEXT,
@@ -14,31 +14,31 @@ CREATE TABLE IF NOT EXISTS notes (
 );
 
 CREATE TABLE IF NOT EXISTS spaces(
-                                        id INT PRIMARY KEY,
-                                        notesId INT,
-                                        userId INT,
-                                        subspacesId INT,
-                                        teamsId INT,
+                                        id UUID PRIMARY KEY,
+                                        notesId UUID,
+                                        userId UUID,
+                                        subspacesId UUID,
+                                        teamsId UUID,
                                         name TEXT,
                                         description TEXT,
                                         notescount float
 );
 CREATE TABLE IF NOT EXISTS subspaces(
-                                        id INT PRIMARY KEY,
-                                        notesId INT,
-                                        userId INT,
-                                        spacesId INT,
-                                        teamsId INT,
+                                        id UUID PRIMARY KEY,
+                                        notesId UUID,
+                                        userId UUID,
+                                        spacesId UUID,
+                                        teamsId UUID,
                                         name TEXT,
                                         description TEXT,
                                         notescount float
 );
 CREATE TABLE IF NOT EXISTS teams(
-                                        id INT PRIMARY KEY,
-                                        notesId INT,
-                                        userId INT,
-                                        spacesId INT,
-                                        subspacesId INT,
+                                        id UUID PRIMARY KEY,
+                                        notesId UUID,
+                                        userId UUID,
+                                        spacesId UUID,
+                                        subspacesId UUID,
                                         name TEXT,
                                         description TEXT,
                                         usercount float
@@ -50,6 +50,6 @@ CREATE TABLE IF NOT EXISTS user(
                                     phonenumber TEXT,
                                     email TEXT,
                                     usercount float,
-                                    teamsId INT,
-                                    friendsId INT
+                                    teamsId UUID,
+                                    friendsId UUID
 );

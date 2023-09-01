@@ -7,6 +7,8 @@ import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
+import java.util.UUID;
+
 
 @Getter
 @Setter
@@ -14,19 +16,27 @@ import org.springframework.data.cassandra.core.mapping.Table;
 public class Team {
 
     @PrimaryKey // Mark the primary key field
-    private int Id;
+    @Column("id")
+    private UUID Id;
+
     @Column("notesId")
-    private int notesId;
+    private UUID notesId;
+
     @Column("userId")
-    private int userId;
+    private UUID userId;
+
     @Column("subspaceId")
-    private int subspacesId;
+    private UUID subspacesId;
+
     @Column("spacesId")
-    private int spacesId;
+    private UUID spacesId;
+
     @Column("name")
     private String name;
+
     @Column("description")
     private String description;
+
     @Column("usercount")
     private float usercount;
 }

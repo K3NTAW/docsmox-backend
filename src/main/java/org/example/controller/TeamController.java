@@ -6,6 +6,7 @@ import org.example.repository.TeamRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("api/teams")
@@ -19,6 +20,7 @@ public class TeamController {
 
     @PostMapping
     public Team createTeam(@RequestBody Team team) {
+        team.setId(UUID.randomUUID());
         return teamRepository.save(team);
     }
     @GetMapping("")
@@ -27,7 +29,7 @@ public class TeamController {
     }
 
     @GetMapping("/{id}")
-    public Team getTeamById(@PathVariable int id) {
+    public Team getTeamById(@PathVariable UUID id) {
         return teamRepository.findById(id).orElse(null);
     }
 }
